@@ -24,6 +24,11 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-logging</artifactId>
 </dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-sleuth</artifactId>
+    <version>2.2.2.RELEASE</version>
+</dependency>
 ```
 
 ### 日志脱敏
@@ -59,7 +64,10 @@ logback配置文件中添加配置
     -->
     <property scope="context" name="SensitiveDataKeys" value='[{"fieldName":"name","format":"CHINESE_NAME"}]'/>
 ```
-
+#### TraceId 链路追踪
+```
+[%X{traceId:-}]
+```
 
 
 #### 使用
